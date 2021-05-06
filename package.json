@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Puyodead1/quick-tba-wrapper#readme",
   "devDependencies": {
     "typedoc": "^0.20.36",
-    "typedoc-dark-theme": "^0.0.11"
+    "typedoc-dark-theme": "^0.0.11",
+    "typescript": "^4.2.4"
   }
 }
