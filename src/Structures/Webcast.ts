@@ -1,14 +1,30 @@
-import TBA from "..";
+import { TBAClient } from "../TBAClient";
 import { APIWebcast } from "../Interfaces/Event.interface";
 
-export default class Webcast {
-  private client!: TBA;
-  public type: string;
-  public channel: string;
-  public date?: string;
-  public file?: string;
+/**
+ * Represents a Webcast
+ */
+export class Webcast {
+  private readonly client!: TBAClient;
+  /**
+   * The type of webcast
+   * @example 'youtube' or 'twitch'
+   */
+  public readonly type: string;
+  /**
+   * The channel
+   * @example FIRSTinMI03 (twitch channel)
+   */
+  public readonly channel: string;
+  public readonly date?: string;
+  public readonly file?: string;
 
-  constructor(client: TBA, data: APIWebcast) {
+  /**
+   * Creates a new Webcast instance
+   * @param client the TBA Client
+   * @param data raw webcast object from the API
+   */
+  constructor(client: TBAClient, data: APIWebcast) {
     Object.defineProperty(this, "client", {
       enumerable: false,
       writable: false,

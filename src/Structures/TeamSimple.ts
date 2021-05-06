@@ -1,24 +1,55 @@
-import TBA from "..";
+import { TBAClient } from "../TBAClient";
 import { API_ENDPOINTS } from "../Constants";
 import { APIDistrict } from "../Interfaces/District.interface";
 import { APIEvent } from "../Interfaces/Event.interface";
 import { APIRobot } from "../Interfaces/Robot.interface";
 import { APITeamSimple } from "../Interfaces/Team.interface";
-import District from "./District";
-import Event from "./Event";
-import Robot from "./Robot";
+import { District } from "./District";
+import { Event } from "./Event";
+import { Robot } from "./Robot";
 
-export default class TeamSimple {
-  private client!: TBA;
-  public key: string;
-  public teamNumber: number;
-  public nickname: string;
-  public name: string;
-  public city: string;
-  public stateProv: string;
-  public coutry: string;
+/**
+ * Represents a Simple Team
+ */
+export class TeamSimple {
+  private readonly client!: TBAClient;
+  /**
+   * The Team key
+   * @example frc121
+   */
+  public readonly key: string;
+  /**
+   * The Team number
+   * @example 121
+   */
+  public readonly teamNumber: number;
+  /**
+   * The Teams nickname
+   */
+  public readonly nickname: string;
+  /**
+   * The Teams name
+   */
+  public readonly name: string;
+  /**
+   * The Teams city
+   */
+  public readonly city: string;
+  /**
+   * The Teams state/provence
+   */
+  public readonly stateProv: string;
+  /**
+   * The Teams country
+   */
+  public readonly coutry: string;
 
-  constructor(client: TBA, data: APITeamSimple) {
+  /**
+   * Creates a Simple Team instance
+   * @param client The TBA Client
+   * @param data raw simple team data from the API
+   */
+  constructor(client: TBAClient, data: APITeamSimple) {
     Object.defineProperty(this, "client", {
       enumerable: false,
       value: client,

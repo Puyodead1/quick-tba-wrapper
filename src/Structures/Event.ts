@@ -1,42 +1,50 @@
-import TBA from "..";
+import { TBAClient } from "../TBAClient";
 import { APIEvent } from "../Interfaces/Event.interface";
-import District from "./District";
-import Webcast from "./Webcast";
+import { District } from "./District";
+import { Webcast } from "./Webcast";
 
-export default class Event {
-  private client!: TBA;
-  public key: string;
-  public name: string;
-  public eventCode: string;
-  public eventType: number;
-  public district: District | null = null;
-  public city: string;
-  public stateProv: string;
-  public country: string;
-  public startDate: string;
-  public endDate: string;
-  public year: number;
-  public shortName: string;
-  public eventTypeString: string;
-  public week: number;
-  public address: string;
-  public postalCode: string;
-  public gmapsPlaceId: string;
-  public gmapsUrl: string;
-  public lat: number;
-  public lng: number;
-  public locationName: string;
-  public timezone: string;
-  public website: string;
-  public firstEventId?: string;
-  public firstEventCode: string;
-  public webcasts: Webcast[] = [];
-  public divisionKeys: string[];
-  public parentEventKey?: string;
-  public playoffType?: number;
-  public playoffTypeString?: string;
+/**
+ * Represents an Event
+ */
+export class Event {
+  private readonly client!: TBAClient;
+  public readonly key: string;
+  public readonly name: string;
+  public readonly eventCode: string;
+  public readonly eventType: number;
+  public readonly district: District | null = null;
+  public readonly city: string;
+  public readonly stateProv: string;
+  public readonly country: string;
+  public readonly startDate: string;
+  public readonly endDate: string;
+  public readonly year: number;
+  public readonly shortName: string;
+  public readonly eventTypeString: string;
+  public readonly week: number;
+  public readonly address: string;
+  public readonly postalCode: string;
+  public readonly gmapsPlaceId: string;
+  public readonly gmapsUrl: string;
+  public readonly lat: number;
+  public readonly lng: number;
+  public readonly locationName: string;
+  public readonly timezone: string;
+  public readonly website: string;
+  public readonly firstEventId?: string;
+  public readonly firstEventCode: string;
+  public readonly webcasts: Webcast[] = [];
+  public readonly divisionKeys: string[];
+  public readonly parentEventKey?: string;
+  public readonly playoffType?: number;
+  public readonly playoffTypeString?: string;
 
-  constructor(client: TBA, data: APIEvent) {
+  /**
+   * Creates an Event instance
+   * @param client The TBA Client
+   * @param data raw event data from the API
+   */
+  constructor(client: TBAClient, data: APIEvent) {
     Object.defineProperty(this, "client", {
       enumerable: false,
       writable: false,

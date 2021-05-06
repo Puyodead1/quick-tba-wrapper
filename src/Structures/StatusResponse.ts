@@ -4,7 +4,34 @@ import {
   APIStatusResponseWeb,
 } from "../Interfaces/StatusResponse.interface";
 
-export default class StatusResponse {
+/**
+ * Represents a Status Response
+ */
+export class StatusResponse {
+  /**
+   * The current season
+   */
+  public readonly currentSeason: number;
+  public readonly maxSeason: number;
+  public readonly isDataFeedDown: boolean;
+  public readonly downEvents: string[];
+  /**
+   * iOS app information
+   */
+  public readonly ios: APIStatusResponseApp;
+  /**
+   * Android app information
+   */
+  public readonly android: APIStatusResponseApp;
+  /**
+   * Website information
+   */
+  public readonly web: APIStatusResponseWeb;
+
+  /**
+   * Creates a status response instance
+   * @param data raw status response data from the API
+   */
   constructor(data: APIStatusResponseInterface) {
     this.currentSeason = data.current_season;
     this.maxSeason = data.max_season;
@@ -31,12 +58,4 @@ export default class StatusResponse {
       travisJob: data.web.travis_job,
     };
   }
-
-  public currentSeason: number;
-  public maxSeason: number;
-  public isDataFeedDown: boolean;
-  public downEvents: string[];
-  public ios: APIStatusResponseApp;
-  public android: APIStatusResponseApp;
-  public web: APIStatusResponseWeb;
 }

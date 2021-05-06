@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node build\\tests"
+    "test": "node build\\tests",
+    "docs": "typedoc src/index.ts --theme ./node_modules/typedoc-dark-theme/bin/default/"
   },
   "keywords": [],
   "author": "Puyodead1",
@@ -14,5 +15,18 @@
     "@types/centra": "^2.2.0",
     "@types/node": "^15.0.1",
     "centra": "^2.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Puyodead1/quick-tba-wrapper"
+  },
+  "bugs": {
+    "url": "https://github.com/Puyodead1/quick-tba-wrapper/issues"
+  },
+  "readme": "https://github.com/Puyodead1/quick-tba-wrapper#readme",
+  "homepage": "https://github.com/Puyodead1/quick-tba-wrapper#readme",
+  "devDependencies": {
+    "typedoc": "^0.20.36",
+    "typedoc-dark-theme": "^0.0.11"
   }
 }

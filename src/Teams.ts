@@ -1,13 +1,20 @@
-import TBA from ".";
+import { TBAClient } from "./TBAClient";
 import { API_ENDPOINTS } from "./Constants";
 import { APITeam, APITeamSimple } from "./Interfaces/Team.interface";
-import Team from "./Structures/Team";
-import TeamSimple from "./Structures/TeamSimple";
+import { Team } from "./Structures/Team";
+import { TeamSimple } from "./Structures/TeamSimple";
 
-export default class Teams {
-  private client!: TBA;
+/**
+ * Represents the Teams API, this is the main class used to interact with a team
+ */
+export class Teams {
+  private readonly client!: TBAClient;
 
-  constructor(client: TBA) {
+  /**
+   * Creates a new Teams instance
+   * @param client The TBA Client
+   */
+  constructor(client: TBAClient) {
     Object.defineProperty(this, "client", {
       enumerable: false,
       writable: false,
@@ -32,12 +39,12 @@ export default class Teams {
 
           resolve(teams);
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
   /**
-   * Gets a list of short form teams
+   * Gets a list of short form teams (simple teams)
    * @param page Page number of results to return, zero-indexed
    * @returns array of simple teams
    */
@@ -53,7 +60,7 @@ export default class Teams {
 
           resolve(teams);
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
@@ -70,7 +77,7 @@ export default class Teams {
         .then((data: string[]) => {
           resolve(data);
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
@@ -95,12 +102,12 @@ export default class Teams {
 
           resolve(teams);
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
   /**
-   * Gets a list of short form teams that competed in the given year
+   * Gets a list of short form teams (simple teams) that competed in the given year
    * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @param page Page number of results to return, zero-indexed
    * @returns array of simple teams
@@ -120,7 +127,7 @@ export default class Teams {
 
           resolve(teams);
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
@@ -141,7 +148,7 @@ export default class Teams {
         .then((data: string[]) => {
           resolve(data);
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
@@ -157,12 +164,12 @@ export default class Teams {
         .then((data: APITeam) => {
           resolve(new Team(this.client, data));
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 
   /**
-   * Gets a simple team object by key
+   * Gets a short form team (simple team) object by key
    * @param key team key, ex: frc121
    * @returns a simple team
    */
@@ -173,7 +180,7 @@ export default class Teams {
         .then((data: APITeamSimple) => {
           resolve(new TeamSimple(this.client, data));
         })
-        .catch((e) => reject(e));
+        .catch((e: Error) => reject(e));
     });
   }
 }

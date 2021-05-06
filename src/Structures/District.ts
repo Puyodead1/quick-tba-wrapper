@@ -1,14 +1,22 @@
-import TBA from "..";
+import { TBAClient } from "../TBAClient";
 import { APIDistrict } from "../Interfaces/District.interface";
 
-export default class District {
-  private client!: TBA;
-  public key: string;
-  public abbreviation: string;
-  public displayName: string;
-  public year: number;
+/**
+ * Represents a District
+ */
+export class District {
+  private readonly client!: TBAClient;
+  public readonly key: string;
+  public readonly abbreviation: string;
+  public readonly displayName: string;
+  public readonly year: number;
 
-  constructor(client: TBA, data: APIDistrict) {
+  /**
+   * Creates a District instance
+   * @param client The TBA Client
+   * @param data raw district data from the API
+   */
+  constructor(client: TBAClient, data: APIDistrict) {
     Object.defineProperty(this, "client", {
       enumerable: false,
       writable: false,

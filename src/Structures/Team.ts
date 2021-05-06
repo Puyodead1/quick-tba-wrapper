@@ -1,22 +1,60 @@
-import TBA from "../index";
+import { TBAClient } from "../TBAClient";
 import { APITeam } from "../Interfaces/Team.interface";
-import TeamSimple from "./TeamSimple";
+import { TeamSimple } from "./TeamSimple";
 
-export default class Team extends TeamSimple {
-  public schoolName: string;
-  public address: string | null;
-  public postalCode: string;
-  public gmapsPlaceId: string | null;
-  public gmapsUrl: string | null;
-  public lat: number | null;
-  public lng: number | null;
-  public locationName: string | null;
-  public website: string | null;
-  public rookieYear: number;
-  public motto: string | null;
-  public homeChampionship: unknown | null;
+/**
+ * Represents a Team
+ */
+export class Team extends TeamSimple {
+  /**
+   * The Teams school name
+   */
+  public readonly schoolName: string;
+  /**
+   * The Teams address
+   */
+  public readonly address: string | null;
+  /**
+   * The Teams Zip Code
+   */
+  public readonly postalCode: string;
+  /**
+   * The Teams Google Maps Place ID
+   */
+  public readonly gmapsPlaceId: string | null;
+  /**
+   * The Teams Google Maps URL
+   */
+  public readonly gmapsUrl: string | null;
+  public readonly lat: number | null;
+  public readonly lng: number | null;
+  /**
+   * The Teams location name
+   */
+  public readonly locationName: string | null;
+  /**
+   * The Teams website
+   */
+  public readonly website: string | null;
+  /**
+   * The Teams rookie year
+   */
+  public readonly rookieYear: number;
+  /**
+   * The Teams motto
+   */
+  public readonly motto: string | null;
+  /**
+   * The Teams home championship
+   */
+  public readonly homeChampionship: unknown | null;
 
-  constructor(client: TBA, data: APITeam) {
+  /**
+   * Creates a Team instance
+   * @param client The TBA Client
+   * @param data raw team object from the API
+   */
+  constructor(client: TBAClient, data: APITeam) {
     super(client, data);
 
     this.schoolName = data.school_name;
