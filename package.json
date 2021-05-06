@@ -1,7 +1,7 @@
 {
-  "name": "tba-wrapper",
+  "name": "quick-tba-wrapper",
   "version": "1.0.0",
-  "description": "A node.js wrapper around The Blue Alliance API V3",
+  "description": "A simple API wrapper for The Blue Alliance",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "Puyodead1",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@types/centra": "^2.2.0",
     "@types/node": "^15.0.1",
