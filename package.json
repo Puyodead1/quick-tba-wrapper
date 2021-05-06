@@ -1,0 +1,18 @@
+{
+  "name": "tba-wrapper",
+  "version": "1.0.0",
+  "description": "A node.js wrapper around The Blue Alliance API V3",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "node build\\tests"
+  },
+  "keywords": [],
+  "author": "Puyodead1",
+  "license": "MIT",
+  "dependencies": {
+    "@types/centra": "^2.2.0",
+    "@types/node": "^15.0.1",
+    "centra": "^2.4.2"
+  }
+}
