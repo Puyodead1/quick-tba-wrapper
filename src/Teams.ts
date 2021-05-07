@@ -83,8 +83,8 @@ export class Teams {
 
   /**
    * Gets a list of teams that competed in the given year
-   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @param page Page number of results to return, zero-indexed
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @returns array of teams
    */
   getTeamsByYear(
@@ -93,7 +93,7 @@ export class Teams {
   ): Promise<Team[]> {
     return new Promise((resolve, reject) => {
       this.client
-        .get(API_ENDPOINTS.TEAMS_YEAR(year, page))
+        .get(API_ENDPOINTS.TEAMS_YEAR(page, year))
         .then((data: APITeam[]) => {
           const teams = [];
           for (const team of data) {
@@ -108,8 +108,8 @@ export class Teams {
 
   /**
    * Gets a list of short form teams (simple teams) that competed in the given year
-   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @param page Page number of results to return, zero-indexed
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @returns array of simple teams
    */
   getTeamsByYearSimple(
@@ -118,7 +118,7 @@ export class Teams {
   ): Promise<TeamSimple[]> {
     return new Promise((resolve, reject) => {
       this.client
-        .get(API_ENDPOINTS.TEAMS_YEAR_SIMPLE(year, page))
+        .get(API_ENDPOINTS.TEAMS_YEAR_SIMPLE(page, year))
         .then((data: APITeamSimple[]) => {
           const teams = [];
           for (const team of data) {
@@ -134,8 +134,8 @@ export class Teams {
   /**
    * Gets a list of Team Keys that competed in the given year
    * @description each page will not have 500 teams, but will include the teams within that range of 500.
-   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @param page Page number of results to return, zero-indexed
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
    * @returns array of team keys
    */
   getTeamKeysByYear(
@@ -144,7 +144,7 @@ export class Teams {
   ): Promise<string[]> {
     return new Promise((resolve, reject) => {
       this.client
-        .get(API_ENDPOINTS.TEAMS_YEAR_KEYS(year, page))
+        .get(API_ENDPOINTS.TEAMS_YEAR_KEYS(page, year))
         .then((data: string[]) => {
           resolve(data);
         })

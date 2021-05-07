@@ -1,12 +1,18 @@
 import { TBAClient } from "../TBAClient";
 import { API_ENDPOINTS } from "../Constants";
 import { APIDistrict } from "../Interfaces/District.interface";
-import { APIEvent } from "../Interfaces/Event.interface";
+import {
+  APIEvent,
+  APIEventSimple,
+  APIEventStatus,
+} from "../Interfaces/Event.interface";
 import { APIRobot } from "../Interfaces/Robot.interface";
 import { APITeamSimple } from "../Interfaces/Team.interface";
 import { District } from "./District";
 import { Event } from "./Event";
 import { Robot } from "./Robot";
+import { EventSimple } from "./EventSimple";
+import { EventStatus } from "./EventStatus";
 
 /**
  * Represents a Simple Team
@@ -120,7 +126,7 @@ export class TeamSimple {
 
   /**
    * Gets a list of all events this team has competed at.
-   * @returns array of Robots
+   * @returns array of Events
    */
   getEvents(): Promise<Event[]> {
     return new Promise((resolve, reject) => {
@@ -130,6 +136,124 @@ export class TeamSimple {
           const events = [];
           for (const event of data) {
             events.push(new Event(this.client, event));
+          }
+          resolve(events);
+        })
+        .catch((e) => reject(e));
+    });
+  }
+
+  /**
+   * Gets a list of all short form events this team has competed at.
+   * @returns array of Simple Events
+   */
+  getEventsSimple(): Promise<EventSimple[]> {
+    return new Promise((resolve, reject) => {
+      this.client
+        .get(API_ENDPOINTS.TEAM_EVENTS_SIMPLE(this.key))
+        .then((data: APIEventSimple[]) => {
+          const events = [];
+          for (const event of data) {
+            events.push(new EventSimple(this.client, event));
+          }
+          resolve(events);
+        })
+        .catch((e) => reject(e));
+    });
+  }
+
+  /**
+   * Gets a list of the event keys for all events this team has competed at.
+   * @returns array of event keys
+   */
+  getEventKeys(): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+      this.client
+        .get(API_ENDPOINTS.TEAM_EVENTS_KEYS(this.key))
+        .then((data: string[]) => {
+          resolve(data);
+        })
+        .catch((e) => reject(e));
+    });
+  }
+
+  /**
+   * Gets a list of all events this team has competed at in the given year. Defaults to current year
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
+   * @returns array of Events
+   */
+  getEventsByYear(
+    year: string = new Date().getFullYear().toString()
+  ): Promise<Event[]> {
+    return new Promise((resolve, reject) => {
+      this.client
+        .get(API_ENDPOINTS.TEAM_EVENTS_YEAR(this.key, year))
+        .then((data: APIEvent[]) => {
+          const events = [];
+          for (const event of data) {
+            events.push(new Event(this.client, event));
+          }
+          resolve(events);
+        })
+        .catch((e) => reject(e));
+    });
+  }
+
+  /**
+   * Gets a list of all short form events this team has competed at.
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
+   * @returns array of Simple Events
+   */
+  getEventsSimpleByYear(
+    year: string = new Date().getFullYear().toString()
+  ): Promise<EventSimple[]> {
+    return new Promise((resolve, reject) => {
+      this.client
+        .get(API_ENDPOINTS.TEAM_EVENTS_YEAR_SIMPLE(this.key, year))
+        .then((data: APIEventSimple[]) => {
+          const events = [];
+          for (const event of data) {
+            events.push(new EventSimple(this.client, event));
+          }
+          resolve(events);
+        })
+        .catch((e) => reject(e));
+    });
+  }
+
+  /**
+   * Gets a list of the event keys for all events this team has competed at.
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
+   * @returns array of event keys
+   */
+  getEventKeysByYear(
+    year: string = new Date().getFullYear().toString()
+  ): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+      this.client
+        .get(API_ENDPOINTS.TEAM_EVENTS_YEAR_KEYS(this.key, year))
+        .then((data: string[]) => {
+          resolve(data);
+        })
+        .catch((e) => reject(e));
+    });
+  }
+
+  /**
+   * Gets a key-value list of the event statuses for events this team has competed at in the given year.
+   * @param year Competition Year (or Season). Must be 4 digits. Defaults to current year
+   * @returns array of event keys
+   */
+  getEventStatusesByYear(
+    year: string = new Date().getFullYear().toString()
+  ): Promise<EventStatus[]> {
+    return new Promise((resolve, reject) => {
+      this.client
+        .get(API_ENDPOINTS.TEAM_EVENTS_YEAR_STATUSES(this.key, year))
+        .then((data: APIEventStatus[]) => {
+          const events = [];
+          for (const event of data) {
+            events.push(new EventStatus(this.client, event));
           }
           resolve(events);
         })

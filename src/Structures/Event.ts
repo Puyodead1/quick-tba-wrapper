@@ -2,23 +2,12 @@ import { TBAClient } from "../TBAClient";
 import { APIEvent } from "../Interfaces/Event.interface";
 import { District } from "./District";
 import { Webcast } from "./Webcast";
+import { EventSimple } from "./EventSimple";
 
 /**
  * Represents an Event
  */
-export class Event {
-  private readonly client!: TBAClient;
-  public readonly key: string;
-  public readonly name: string;
-  public readonly eventCode: string;
-  public readonly eventType: number;
-  public readonly district: District | null = null;
-  public readonly city: string;
-  public readonly stateProv: string;
-  public readonly country: string;
-  public readonly startDate: string;
-  public readonly endDate: string;
-  public readonly year: number;
+export class Event extends EventSimple {
   public readonly shortName: string;
   public readonly eventTypeString: string;
   public readonly week: number;
@@ -45,25 +34,8 @@ export class Event {
    * @param data raw event data from the API
    */
   constructor(client: TBAClient, data: APIEvent) {
-    Object.defineProperty(this, "client", {
-      enumerable: false,
-      writable: false,
-      value: client,
-    });
+    super(client, data);
 
-    this.key = data.key;
-    this.name = data.name;
-    this.eventCode = data.event_code;
-    this.eventType = data.event_type;
-    if (data.district) {
-      this.district = new District(client, data.district);
-    }
-    this.city = data.city;
-    this.stateProv = data.state_prov;
-    this.country = data.country;
-    this.startDate = data.start_date;
-    this.endDate = data.end_date;
-    this.year = data.year;
     this.shortName = data.short_name;
     this.eventTypeString = data.event_type_string;
     this.week = data.week;
