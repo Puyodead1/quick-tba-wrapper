@@ -1,5 +1,7 @@
 export * from "./TBAClient";
 export * from "./Structures/District";
+export * from "./Structures/EventSimple";
+export * from "./Structures/EventStatus";
 export * from "./Structures/Event";
 export * from "./Structures/Robot";
 export * from "./Structures/StatusResponse";
