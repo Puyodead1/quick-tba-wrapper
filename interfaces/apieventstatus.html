@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>APIWebcast | quick-tba-wrapper</title>
+	<title>APIEventStatus | quick-tba-wrapper</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400,400i,700" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../modules.html">Globals</a>
 				</li>
 				<li>
-					<a href="apiwebcast.html">APIWebcast</a>
+					<a href="apieventstatus.html">APIEventStatus</a>
 				</li>
 			</ul>
-			<h1>Interface APIWebcast</h1>
+			<h1>Interface APIEventStatus</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">APIWebcast</span>
+						<span class="target">APIEventStatus</span>
 					</li>
 				</ul>
 			</section>
@@ -82,10 +82,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apiwebcast.html#channel" class="tsd-kind-icon">channel</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apiwebcast.html#date" class="tsd-kind-icon">date</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apiwebcast.html#file" class="tsd-kind-icon">file</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apiwebcast.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apieventstatus.html#additionalprop1" class="tsd-kind-icon">additional<wbr>Prop1</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apieventstatus.html#additionalprop2" class="tsd-kind-icon">additional<wbr>Prop2</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apieventstatus.html#additionalprop3" class="tsd-kind-icon">additional<wbr>Prop3</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,44 +93,121 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="channel" class="tsd-anchor"></a>
-					<h3>channel</h3>
-					<div class="tsd-signature tsd-kind-icon">channel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="additionalprop1" class="tsd-anchor"></a>
+					<h3>additional<wbr>Prop1</h3>
+					<div class="tsd-signature tsd-kind-icon">additional<wbr>Prop1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L7">Interfaces/Event.interface.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L104">Interfaces/Event.interface.ts:104</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>alliance<span class="tsd-signature-symbol">: </span><a href="apieventstatusalliance.html" class="tsd-signature-type">APIEventStatusAlliance</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>alliance_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>last_<wbr>match_<wbr>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>next_<wbr>match_<wbr>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>overall_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>playoff<span class="tsd-signature-symbol">: </span><a href="apieventstatusplayoffs.html" class="tsd-signature-type">APIEventStatusPlayoffs</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>playoff_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>qual<span class="tsd-signature-symbol">: </span><a href="apieventstatusqualifications.html" class="tsd-signature-type">APIEventStatusQualifications</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="date" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> date</h3>
-					<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="additionalprop2" class="tsd-anchor"></a>
+					<h3>additional<wbr>Prop2</h3>
+					<div class="tsd-signature tsd-kind-icon">additional<wbr>Prop2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L8">Interfaces/Event.interface.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L114">Interfaces/Event.interface.ts:114</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>alliance<span class="tsd-signature-symbol">: </span><a href="apieventstatusalliance.html" class="tsd-signature-type">APIEventStatusAlliance</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>alliance_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>last_<wbr>match_<wbr>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>next_<wbr>match_<wbr>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>overall_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>playoff<span class="tsd-signature-symbol">: </span><a href="apieventstatusplayoffs.html" class="tsd-signature-type">APIEventStatusPlayoffs</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>playoff_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>qual<span class="tsd-signature-symbol">: </span><a href="apieventstatusqualifications.html" class="tsd-signature-type">APIEventStatusQualifications</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="file" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> file</h3>
-					<div class="tsd-signature tsd-kind-icon">file<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="additionalprop3" class="tsd-anchor"></a>
+					<h3>additional<wbr>Prop3</h3>
+					<div class="tsd-signature tsd-kind-icon">additional<wbr>Prop3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L9">Interfaces/Event.interface.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L124">Interfaces/Event.interface.ts:124</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Puyodead1/quick-tba-wrapper/blob/2dc5b85/src/Interfaces/Event.interface.ts#L6">Interfaces/Event.interface.ts:6</a></li>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>alliance<span class="tsd-signature-symbol">: </span><a href="apieventstatusalliance.html" class="tsd-signature-type">APIEventStatusAlliance</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>alliance_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>last_<wbr>match_<wbr>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>next_<wbr>match_<wbr>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>overall_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>playoff<span class="tsd-signature-symbol">: </span><a href="apieventstatusplayoffs.html" class="tsd-signature-type">APIEventStatusPlayoffs</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>playoff_<wbr>status_<wbr>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>qual<span class="tsd-signature-symbol">: </span><a href="apieventstatusqualifications.html" class="tsd-signature-type">APIEventStatusQualifications</a></h5>
+							</li>
 						</ul>
-					</aside>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -181,9 +257,24 @@
 					<li class=" tsd-kind-interface">
 						<a href="apieventsimple.html" class="tsd-kind-icon">APIEvent<wbr>Simple</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="apieventstatus.html" class="tsd-kind-icon">APIEvent<wbr>Status</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="apieventstatus.html#additionalprop1" class="tsd-kind-icon">additional<wbr>Prop1</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="apieventstatus.html#additionalprop2" class="tsd-kind-icon">additional<wbr>Prop2</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="apieventstatus.html#additionalprop3" class="tsd-kind-icon">additional<wbr>Prop3</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="apieventstatusalliance.html" class="tsd-kind-icon">APIEvent<wbr>Status<wbr>Alliance</a>
 					</li>
@@ -217,27 +308,9 @@
 					<li class=" tsd-kind-interface">
 						<a href="apiteamsimple.html" class="tsd-kind-icon">APITeam<wbr>Simple</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="apiwebcast.html" class="tsd-kind-icon">APIWebcast</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="apiwebcast.html#channel" class="tsd-kind-icon">channel</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="apiwebcast.html#date" class="tsd-kind-icon">date</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="apiwebcast.html#file" class="tsd-kind-icon">file</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="apiwebcast.html#type" class="tsd-kind-icon">type</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-type-alias">
 						<a href="../modules.html#webcasttype" class="tsd-kind-icon">Webcast<wbr>Type</a>
 					</li>
